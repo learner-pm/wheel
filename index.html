@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>测试</title>
+    <!-- <script src="./js/_storage.js" type="module"></script> -->
+    <!-- <script src="./js/_storage.js"></script>
+    <script src="./js/_this.js"></script>
+    <script src="./js/_ajax.js"></script> -->
+  </head>
+
+  <body>
+    <div>12</div>
+  </body>
+  <script type="module">
+    import _ajax from "./myJs/_ajax.js";
+    const api = "http://127.0.0.1:8800/user/login";
+    const post = _ajax
+      .post(api, {
+        user_phone: 15611111111,
+        user_passWord: 1234567,
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    const get = _ajax
+      .get(
+        "http://127.0.0.1:8800/user/demo",
+        {
+          name: 11,
+        },
+        {
+          "Content-Type": "application/json",
+        }
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  </script>
+  <script>
+    // function foo() { // getName = function() { // console.log(1) // } // return this // } // foo.getName = function() { // console.log(2) // } // foo.prototype.getName = function() { // console.log(3)
+    // } // getName = function() { // console.log(4) // } // foo.getName() // getName() // foo().getName() // getName()
+  </script>
+  <script type="module">
+    // import _storage from "./js/_storage.js";
+    // console.log(_storage.removeAll());
+    // // localStorage.clear()
+    // _storage.setList({
+    //   3: 3,
+    //   10: 10,
+    // });
+    // _storage.setList([
+    //   {
+    //     key: 2,
+    //     value: 2,
+    //   },
+    // ]);
+    // _storage.setList([[1, 1]]);
+    // _storage.set(
+    //   "ss",
+    //   {
+    //     i: 1,
+    //   },
+    //   4
+    // );
+
+    // setTimeout(() => {
+    //   console.log(_storage.get("ss"));
+    // }, 5000);
+    // // _storage.set("ss", [
+    // //     1, 2, 2, 4, 5, 5
+    // // ])
+    // console.log(localStorage.getItem(3));
+    // console.log(_storage.getListArray());
+    // console.log(_storage.getListKey());
+  </script>
+</html>
