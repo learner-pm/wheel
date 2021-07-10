@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="module">
+      import _storage from "./_storage.js";
+      localStorage.clear();
+      _storage.setList({
+        3: 3,
+        10: 10,
+      });
+      _storage.setList([
+        {
+          key: 2,
+          value: 2,
+        },
+      ]);
+      _storage.setList([[1, 1]]);
+      _storage.set(
+        "ss",
+        {
+          i: 1,
+        },
+        4
+      );
+
+      setTimeout(() => {
+        console.log(_storage.get("ss"));
+      }, 5000);
+      // _storage.set("ss", [
+      //     1, 2, 2, 4, 5, 5
+      // ])
+      console.log(localStorage.getItem(3));
+      console.log(_storage.getListArray());
+      console.log(_storage.getListKey());
+    </script>
+  </body>
+</html>

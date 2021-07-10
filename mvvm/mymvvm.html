@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>mvvm</title>
+    <!-- <script src="./mymvvm.js"  type="module"></script> -->
+  </head>
+  <body>
+    <div id="app">
+      这是id得值 {{id}}
+      <p @click="getA()">
+        <span>
+          <span>{{name}}</span>
+        </span>
+      </p>
+      <p @mouseover="err">{{id}}</p>
+      <input type="text" v-model="id" value="123" />
+      <button @click="btus(id)">{{btu}}</button>
+    </div>
+  </body>
+  <script type="module">
+    import Mvvm from "./mymvvm.js";
+    let mthoeds = {
+      getA() {
+        alert("我是定义的方法");
+      },
+      err() {
+        console.log("移动到这个元素上了");
+      },
+      btus(a) {
+        this.con = 10;
+        console.log(this);
+        alert(`这是${this.name},${this.id}号` + a);
+        setTimeout(() => {
+          this.id = 1;
+        }, 1000);
+      },
+    };
+
+    const a = 10;
+    const mm = new Mvvm({
+      el: "app",
+      data: { id: 12121, name: "测试用例", ctn: "isOk", btu: "我是按钮" },
+      mthoeds,
+    });
+  </script>
+  <style>
+    #app {
+      color: red;
+      transform: translateY(-100px);
+    }
+    body {
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    html {
+      height: 100%;
+    }
+    * {
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</html>

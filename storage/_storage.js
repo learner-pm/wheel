@@ -1,4 +1,4 @@
-import { isJSON, isArray, isObject } from "./util.js"
+import { isJSON, isArray, isObject } from "../util/util.js"
 
 const _storage = {
     set(key, value, expire = null) {

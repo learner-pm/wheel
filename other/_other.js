@@ -7,9 +7,10 @@ Array.prototype.myMap = function (callback) {
     }, 0)
     return newArr
 }
-let arr = [1, 2, 3]
-let getre = arr.myMap((e, index, arr) => {
-    console.log(index)
-    return e * 2
-})
-console.log(getre)
+Function.prototype.mycall = function (obj, ...arg) {
+    const fn = Symbol('临时')
+    obj[fn] = this
+    obj[fn](...arg)
+    delete obj[fn]
+}
+

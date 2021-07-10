@@ -10,9 +10,9 @@ function isArray(array) {
     return Array.isArray(array)
 }
 
-function isJSON(str) {
-    if (typeof str == 'string') {
-        const obj = JSON.parse(str);
+function isJSON(string) {
+    if (typeof string == 'string') {
+        const obj = JSON.parse(string);
         if (typeof obj == 'object' && obj) {
             return true;
         } else {

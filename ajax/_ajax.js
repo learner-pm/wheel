@@ -1,4 +1,4 @@
-import { isJSON, isString, isObject } from "./util.js"
+import { isJSON, isString, isObject } from "../util/util.js"
 
 const httpConfig = () => {
     return {
